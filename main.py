@@ -1,4 +1,4 @@
-from controller.builder_layer import BuilderLayer
+from build.builder_layer import BuilderLayer
 from utils.import_aws_credentials import AWS_SERVICES
 from dotenv import load_dotenv
 
@@ -51,5 +51,8 @@ def start_controller():
 # -----------------------------------------------------------------
 
 if __name__ == "__main__":
-    start_controller()
+
+    builder = LambdaLayerBuilder(python_version="3.13")
+    builder.run()
+    # start_controller()
  
